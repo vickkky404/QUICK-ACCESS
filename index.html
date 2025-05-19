@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity Tool</title>
+  <style>
+    body {
+      background-color: #a98fdb;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+   h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(108, 24, 55, 0.5);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  font-weight: 700; 
+  letter-spacing: 1px;
+  text-transform: uppercase; 
+  padding: 15px 0;
+  background: linear-gradient(135deg, rgba(169,143,219,0.8) 0%, rgba(123,90,194,0.8) 100%);
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+  position: relative;
+  overflow: hidden; 
+}
+
+p {
+  text-align: center; 
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #f8f8f8;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+
+ 
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  
+  
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  
+
+  position: relative;
+  padding-bottom: 15px;
+}
+
+
+p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+}
+
+
+p {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 3px 3px 6px rgba(108, 24, 55, 0.7);
+}
+
+
+h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+h1:hover::before {
+  transform: translateX(100%);
+}
+    
+    h1, h2 {
+      text-align: center;
+      
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    
+    .links a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(169,143,219,0.8) 0%, rgba(123,90,194,0.8) 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(108, 24, 55, 0.4);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.links a:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(108, 24, 55, 0.6);
+  background: linear-gradient(135deg, rgba(169,143,219,1) 0%, rgba(123,90,194,1) 100%);
+}
+
+.links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.6s;
+}
+
+.links a:hover::before {
+  left: 100%;
+}
+
+.links a:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 3px 10px rgba(108, 24, 55, 0.5);
+} 
+
+
+    .links a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .links a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 >PRODUCTIVITY TOOLS</h1>
+    <p style="text-align: center;">This is a personalized tool created to help students and professionals focus on work and avoid distractions.</p>
+    
+    <!-- Productivity Section -->
+    <div class="section">
+      <h2>PRODUCTIVITY</h2>
+      <div class="links">
+        <a href="https://www.youtube.com/">YOUTUBE</a>
+        <a href="https://www.notion.so/">NOTION</a>
+        <a href="https://www.perplexity.ai/">PERPLEXITY</a>
+         <a href="https://claude.ai/new">CLAUDE AI</a>
+        
+      </div>
+    </div>
+    <!-- IDE Section -->
+    <div class="section">
+      <h2>IDE</h2>
+      <div class="links">
+        <a href="https://code.visualstudio.com/">VS CODE</a>
+        <a href="https://www.cursor.com/">CURSOR</a>
+        <a href="https://www.eclipse.org/">ECLIPS</a>
+        <a href="https://www.jetbrains.com/"> JetBrains</a>
+        <a href="https://www.bloodshed.net/"> DEV CPP</a>
+        <a href="https://developer.apple.com/xcode/"> xcode(APPLE)</a>
+         </div>
+    </div>
+
+
+     <!-- NEWS Section -->
+    <div class="section">
+      <h2>NEWS</h2>
+      <div class="links">
+        <a href="https://www.thehindu.com/">THE HINDUS</a>
+        <a href="https://www.hindustantimes.com/">HINDUSTAN TIMES</a>
+        <a href="https://www.bbc.com/">BBC</a>
+        <a href="https://news.google.com/home?hl=en-IN&gl=IN&ceid=IN:en"> GOOGLE NEWS</a>
+        <a href="https://www.livemint.com/">MINT</a>
+        <a href="https://www.financialexpress.com/"> FINANCIAL EXPRESS</a>
+        <a href="https://timesofindia.indiatimes.com/">TOI</a>
+        <a href="https://beebom.com/">BEEBOM</a>
+        <a href="https://beebom.com/">DAINIK JRAGAN</a>
+        <a href="https://www.bhaskar.com/">DAINIK BHASKAR</a>
+        <a href="https://www.bhaskar.com/">NAVBHARAT TIMES</a>
+
+
+
+
+         </div>
+    </div>
+
+
+    <!-- OTT Section -->
+    <div class="section">
+      <h2>OTT</h2>
+      <div class="links">
+        <a href="https://www.youtube.com/">YOUTUBE</a>
+        <a href="https://www.netflix.com/in/">NETFLIX</a>
+        <a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root">PRIME VIDEO</a>
+        <a href="https://www.hotstar.com/in/home?ref=%2Fin"> JioHotstar</a>
+        <a href="https://www.zee5.com/"> zee5</a>
+        <a href="https://www.mxplayer.in/movie-videos/hindi-movies"> MX PLAYER</a>
+      </div>
+    </div>
+
+        <div class="section">
+      <h2>PROGRAMMING</h2>
+      <div class="links">
+        <a href="https://leetcode.com/playground/new/empty">LEETCODE PLAYGROUND</a>
+        <a href="https://www.programiz.com/">PROGRAMMIZ</a>
+        <a href="https://survey.stackoverflow.co/2024/">STACK OVERFOLW</a>
+        <a href="https://www.codechef.com/ide">CODE CHEF</a>
+        <a href="https://download-directory.github.io/">DOWNLOAD GITHUB REPO</a> 
+        <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science">cs50</a>
+        <a href="https://replit.com/~">replit</a>
+        <a href="https://github.com/">GITHUB</a>
+
+      </div>
+    </div>
+
+
+    <!-- Productivity Section -->
+    <div class="section">
+      <h2>ENTERTAINMENT</h2>
+      <div class="links">
+        <a href="https://netmirror.app/">NETMIRROR</a>
+        <a href="https://animekai.to/home">ANIME KAI</a>
+        <a href="https://aniplaynow.live/">ANIplay</a>
+         <a href="https://discord.com/">DISCORD</a>
+        
+      </div>
+    </div>
+
+    
+    <!-- UTILITY Section -->
+    <div class="section">
+      <h2>UTILITY</h2>
+      <div class="links">
+        <a href="https://getintopc.com/">GET INTO PC</a>
+        <a href="https://steamrip.com/">STEAM RIP</a>
+        <a href="https://steamunlocked.net/all-games-2/">STEAM UNLOCK</a>
+        <a href="https://discord.com/">DISCORD</a>
+        <a href="https://slack.com/intl/en-in">SLACK</a>
+        
+      </div>
+    </div>
+
+     <!-- SOCIAL Section -->
+    <div class="section">
+      <h2>SOCIAL</h2>
+      <div class="links">
+        <a href="https://x.com/home">X(TWITTER)</a>
+        <a href="https://in.pinterest.com/">PINTREST</a>
+        <a href="https://www.facebook.com/">FACEBOOK</a>
+        <a href="https://www.instagram.com/">INSTAGRAM</a>
+        <a href="https://www.reddit.com/">REDDIT</a>
+        <a href="https://www.threads.com/">THREADS</a>
+        
+      </div>
+    </div>
+
+       <!-- SOCIAL Section -->
+    <div class="section">
+      <h2>BROWSERS</h2>
+      <div class="links">
+        <a href="https://www.google.com/intl/en_in/chrome/">CHROME</a>
+        <a href="https://brave.com/">BRAVE</a>
+        <a href="https://www.opera.com/">OPERA</a>
+        <a href="https://www.microsoft.com/en-us/edge/download?form=MA13FJ">EDGE</a>
+        <a href="https://www.mozilla.org/en-US/firefox/new/">FIREFOX</a>
+        
+      </div>
+    </div>
+
+    
+    <!-- References Section -->
+    <div class="section">
+      <h2>REFERENCES</h2>
+      <div class="links">
+        <a href="https://howtodoinjava.com/java/basics/java-tutorial/">JAVA</a>
+        <a href="https://www.britannica.com/">BRITINICA</a>
+        <a href="https://www.wikipedia.org/">WIKIPEDIA</a>
+        <a href="https://www.figma.com/files/team/1480938488895270917/recents-and-sharing?fuid=1480938486993908310">FIGMA</a>
+        <a href="https://en.cppreference.com/w/">CPP</a>
+        <a href="https://annas-archive.org/">ANNA'S ACRCHIVE</a>
+        <a href="https://namastedev.com/">JAVASCRIPT</a>
+        <a href="https://www.geeksforgeeks.org/">GFG</a>
+        <a href="https://developer.mozilla.org/en-US/">WEB DEV</a>
+        <a href="https://imagecolorpicker.com/">COLOR PICKER</a>
+        <a href="https://picsart.com/">PICSART</a>
+        <a href="https://www.canva.com/en_in/">CANVA</a>
+        <a href=" https://www.thehindu.com/news/">THE HINDU</a>
+
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>Created by Nalinikant Bastia - [2025]</p>
+    <p>Contact: [work.nalinikant@gmail.com]</p>
+    <p>&copy; 2023 Vickkky@404. All rights reserved.</p>
+  </footer>
+</body>
+</html>
